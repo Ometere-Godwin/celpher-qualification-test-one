@@ -37,7 +37,11 @@ export default function CryptoDataDispay() {
         const data = await response.json();
         setCryptoData(data);
       } catch (err) {
-        setError(err.message);
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occured");
+        }
       } finally {
         setLoading(false);
       }
