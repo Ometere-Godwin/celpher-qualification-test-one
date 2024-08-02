@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
-import Image from "next/image";
-import crypto from "../public/images/crypto.png";
 
 interface CrytoData {
   "Realtime Currency Exchange Rate": {
@@ -23,11 +21,13 @@ export default function CryptoDataDispay() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const apiKey = process.env.REACT_APP_ALPHA_VANTAGE_API_KEY;
+
   useEffect(() => {
     const fetchCrypto = async () => {
       try {
         const response = await fetch(
-          `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=BTC&to_currency=USD&apikey=RIBXT3XYLI69PC0Q`
+          `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=BTC&to_currency=USD&apikey=${apiKey}`
         );
 
         if (!response.ok) {
@@ -59,11 +59,10 @@ export default function CryptoDataDispay() {
   }
   return (
     <div className="pl-10 max-w-2xl mx-auto border-[2px] shadow-lg flex flex-col justify-center bg-gray-800  h-screen rounded-lg">
-      <Image src={crypto} alt="logo" width={50} height={50} />
-      <div className="flex items-center border-[2px] p-2 max-w-xl rounded-lg my-3 flex-col">
+      <div className="flex items-center border-[2px] p-2 max-w-xl rounded-lg my-3">
         <h1 className="text-4xl font-bold mb-4 ">Cryptocurrency Information</h1>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 border-[2px] p-2 max-w-xl rounded-lg my-3">
         <p className="text-xl">
           Currency:{" "}
           {
