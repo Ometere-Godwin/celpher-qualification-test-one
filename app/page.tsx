@@ -2,7 +2,7 @@ import CryptoDataDispay from "@/components/CryptoDataDispay";
 
 export default function Home() {
   return (
-    <main className="container mx-auto p-4 text-white overflow-hidden">
+    <main className="mx-auto text-white flex flex-col items-center justify-center">
       <CryptoDataDispay />
     </main>
   );
