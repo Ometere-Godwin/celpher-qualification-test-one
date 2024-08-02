@@ -62,13 +62,13 @@ export default function CryptoDataDispay() {
     return null;
   }
   return (
-    <div className="mt-10 bg-gray-600 items-center mx-auto border-[2px] shadow-lg flex flex-col  h-full rounded-lg p-3">
+    <div className="mt-10 bg-gray-800 items-center mx-auto border-[2px] shadow-lg flex flex-col lg:h-full h-screen rounded-lg p-3">
       <div className="flex border-[2px] p-2 max-w-xl rounded-lg my-3 w-full">
         <h1 className="md:text-4xl font-bold mb-4 text-xl ">
           Cryptocurrency Information
         </h1>
       </div>
-      <div className="flex flex-col gap-4 border-[2px] p-2 max-w-xl rounded-lg my-3 w-full">
+      <div className="flex flex-col gap-4 h-full border-[2px] p-2 max-w-xl rounded-lg my-3 w-full">
         <p className="md:text-xl lg:text-xl text-lg">
           Currency:{" "}
           {
