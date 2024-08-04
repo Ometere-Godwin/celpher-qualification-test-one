@@ -102,12 +102,12 @@ export default function CryptoDataDispay() {
         </p>
 
         <p className="md:text-xl lg:text-xl text-lg">
-          Last Refreshed: $
+          Last Refreshed:
           {cryptoData["Realtime Currency Exchange Rate"]["6. Last Refreshed"]}
         </p>
 
         <p className="md:text-xl lg:text-xl text-lg">
-          Time Zone: $
+          Time Zone:
           {cryptoData["Realtime Currency Exchange Rate"]["7. Time Zone"]}
         </p>
 
